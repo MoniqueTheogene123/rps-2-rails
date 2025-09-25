@@ -1,4 +1,23 @@
-<h1>We played <%= @random_move %></h2>
-<h1>They played <%= @random_move %></h2>
+<h2>
+   We played scissors!
+  </h2>
 
-<a href="/">Rules</a>
+  <h2>
+  They played <%= @random_move %>!
+  </h2>
+
+<% if @outcome == "won" %>
+  <h2 style="color: green">
+  We <%= @outcome %>!
+  </h2>
+  <% elsif @outcome == "lost" %>
+    <h2 style="color: red">
+      We <%= @outcome %>!
+    </h2>
+    <% else %>
+       <h2 style="color: black">
+  We <%= @outcome %>!
+  </h2>
+  <% end %>
+
+    <a href="/">Rules</a>
