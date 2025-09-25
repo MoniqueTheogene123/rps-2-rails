@@ -9,11 +9,12 @@ class GameController < ApplicationController
       @outcome = "lost"
     else
       @outcome = "won"
+    end
       
       render({ :template => "game_templates/play_rock" })
-  end
+    end
     
-    def paper
+  def paper
       @random_move = ["rock", "paper", "scissors"].sample
       
       if @random_move == "paper"
@@ -22,12 +23,12 @@ class GameController < ApplicationController
         @outcome = "won"
       else
         @outcome = "lost"
-    end
-      
-      render({ :template => "game_templates/play_paper" })
+      end
+        
+    render({ :template => "game_templates/play_paper" })
     end
     
-    def scissors
+  def scissors
       @random_move = ["rock", "paper", "scissors"].sample
       if @random_move == "scissors"
         @outcome = "tied"
@@ -35,13 +36,13 @@ class GameController < ApplicationController
         @outcome = "won"
       else
         @outcome = "lost"
-    end
-      
-      render({ :template => "game_templates/play_scissors" })
+      end
+        
+        render({ :template => "game_templates/play_scissors" })
     end
     
-    def home
-      
-      render({ :template => "game_templates/home" })
-    end
+  def home
+    
+    render({ :template => "game_templates/home" })
+  end
 end
